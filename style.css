@@ -36,8 +36,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .navbar {
-  width: 5rem;
-  height: 100vh;
   position: fixed;
   background-color: var(--main-bg);
   transition: width var(--transition-speed) ease-in-out;
@@ -87,14 +85,6 @@ body::-webkit-scrollbar-thumb {
   margin-top: auto;
 }
 
-.navbar:hover {
-  width: 16rem;
-}
-
-.navbar:hover .text-link {
-  display: block;
-}
-
 .primary {
   color: rgb(156, 33, 228);
 }
@@ -112,4 +102,82 @@ body::-webkit-scrollbar-thumb {
 
 .nav-items:last-child {
   margin-top: auto;
+}
+
+p {
+  text-align: justify;
+}
+h1 {
+  text-align: center;
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--secondary-textColor);
+  background: var(--secondary-bg);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: transform 400ms;
+}
+
+.navbar:hover .logo svg {
+  transform: rotate(-180deg);
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar {
+    width: 5rem;
+    height: 100vh;
+    top: 0;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .text-link {
+    display: block;
+  }
+
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 100vw;
+    height: 5rem;
+    position: sticky;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-list {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    margin: 0;
+  }
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
